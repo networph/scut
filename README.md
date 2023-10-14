@@ -73,28 +73,6 @@ Move the script:
 
 Use scut man in terminal, Once you have installed.
 
-## Roadmap
-
-[v 1.1.0] - Backup & Restore: Anticipated Release - March 2023
-
-    Backup and Restore: Safeguard and reclaim your shortcuts with ease.
-
-[v 1.1.9] - Grouping of Shortcuts: Anticipated Release - April 2023
-
-    Group Management: Categorize your shortcuts for a structured, accessible setup.
-
-[v 1.2.8] - Shortcut Sharing: Anticipated Release - May 2023
-
-    Sharing Capabilities: Simplify sharing of shortcut setups between various systems and colleagues.
-
-[v 1.3.7] - Enhanced Interaction & Management: Anticipated Release - June 2023
-
-    Interactive UI: Facilitate effortless management and overview of your shortcuts through interactive sessions.
-
-[v 1.4.6] - Integration with Additional Shell Types: Anticipated Release - July 2023
-
-    Cross-Shell Compatibility: Expand scut to be compatible with other shells like zsh and fish.
-
 
 ## Authors
 
