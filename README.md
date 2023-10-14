@@ -6,9 +6,9 @@
     SCUT is a simple bash tool designed to manage and utilize custom shortcuts to streamline your terminal experience.
     <br/>
     <br/>
-    <a href="https://github.com/networph/scut/issues">Report Bug</a>
+    <a href="https://github.com/networph/scut/issues">Report a Bug</a>
     .
-    <a href="https://github.com/networph/scut/issues">Request Feature</a>
+    <a href="https://github.com/networph/scut/issues">Request a Feature</a>
   </p>
 </p>
 
