@@ -61,10 +61,10 @@ Navigate to the directory where you want to clone the scut repository, and run:
 Step 2: Navigate to the Project Directory
 
 Change into the newly cloned scut directory:
-```cd scut```
+```cd src/scut```
 
 Then run:
-```chmod +x scut.sh```
+```chmod +x src/scut.sh```
 
 Move the script:
 ```mv scut.sh /usr/local/bin/scut```
