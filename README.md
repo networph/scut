@@ -53,8 +53,7 @@ Installing Wget
 
 ### Installation
 
-WIth git:
-run ```cd```
+run: ```cd```
 
 then run:
 ```git clone https://github.com/networph/scut.git```
