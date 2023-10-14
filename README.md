@@ -36,6 +36,8 @@
     Bash Shell: Ensure that your system is using Bash as its shell. Most Unix-like operating systems like Linux and macOS use Bash by default.
     Git (optional, but recommended): To clone the repository directly from GitHub.
     curl or wget (optional): If you want to download the script directly without Git
+
+    use brew for installing on MacOS. Im on arch, so below is what arch users will do.
     
 Installing Git
 
@@ -51,25 +53,21 @@ Installing Wget
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
+WIth git:
 
-2. Clone the repo
+Navigate to the directory where you want to clone the scut repository, and run:
+```git clone https://github.com/networph/scut.git```
 
-```sh
-git clone https://github.com/your_username_/Project-Name.git
-```
+Step 2: Navigate to the Project Directory
 
-3. Install NPM packages
+Change into the newly cloned scut directory:
+```cd scut```
 
-```sh
-npm install
-```
+Then run:
+```chmod +x scut.sh```
 
-4. Enter your API in `config.js`
-
-```JS
-const API_KEY = 'ENTER YOUR API';
-```
+Move the script:
+```mv scut.sh ~/bin/scut```
 
 ## Usage
 
