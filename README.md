@@ -54,17 +54,18 @@ Installing Wget
 ### Installation
 
 WIth git:
+run ```cd```
 
-Navigate to the directory where you want to clone the scut repository, and run:
+then run:
 ```git clone https://github.com/networph/scut.git```
 
 Step 2: Navigate to the Project Directory
-
-Change into the newly cloned scut directory:
-```cd src/scut```
+```cd scut```
+Also run:
+```cd src``
 
 Then run:
-```chmod +x src/scut.sh```
+```chmod +x scut.sh```
 
 Move the script:
 ```mv scut.sh /usr/local/bin/scut```
