@@ -67,7 +67,7 @@ Then run:
 ```chmod +x scut.sh```
 
 Move the script:
-```mv scut.sh ~/bin/scut```
+```mv scut.sh /usr/local/bin/scut```
 
 ## Usage
 
