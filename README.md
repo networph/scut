@@ -78,8 +78,4 @@ Use scut man in terminal, Once you have installed.
 
 * **networth** - *Main dev | Read profile* - [networth](https://github.com/networph/) - *everything*
 
-## Acknowledgements
 
-* [Friends]()
-* [Google]()
-* [Brain]()
