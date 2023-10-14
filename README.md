@@ -31,20 +31,23 @@
 
     GitHub: The entire scut project is hosted on GitHub, facilitating not only version control and issue tracking but also serving as the central hub for user acquisition, collaboration, and contribution. This platform provides users with detailed information, documentation, and the ability to download or clone the project for personal or developmental use.
 
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+    Bash Shell: Ensure that your system is using Bash as its shell. Most Unix-like operating systems like Linux and macOS use Bash by default.
+    Git (optional, but recommended): To clone the repository directly from GitHub.
+    curl or wget (optional): If you want to download the script directly without Git
+    
+Installing Git
 
-* npm
+```sudo pacman -Syu git```
 
-```sh
-npm install npm@latest -g
-```
+Installing Curl
+
+```sudo pacman -Syu curl```
+
+Installing Wget
+
+```sudo pacman -Syu wget```
 
 ### Installation
 
@@ -93,9 +96,6 @@ Use scut man in terminal, Once you have installed.
 [v 1.4.6] - Integration with Additional Shell Types: Anticipated Release - July 2023
 
     Cross-Shell Compatibility: Expand scut to be compatible with other shells like zsh and fish.
-
-### Creating A Pull Request
-
 
 
 ## Authors
