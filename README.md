@@ -34,7 +34,7 @@
 ### Prerequisites
 
     Bash Shell: Ensure that your system is using Bash as its shell. Most Unix-like operating systems like Linux and macOS use Bash by default.
-    Git (optional, but recommended): To clone the repository directly from GitHub.
+    Git: To clone the repository directly from GitHub.
     curl or wget (optional): If you want to download the script directly without Git
 
     use brew for installing on MacOS. Im on arch, so below is what arch users will do.
