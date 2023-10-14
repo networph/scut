@@ -61,7 +61,7 @@ then run:
 Step 2: Navigate to the Project Directory
 ```cd scut```
 Also run:
-```cd src``
+```cd src```
 
 Then run:
 ```chmod +x scut.sh```
