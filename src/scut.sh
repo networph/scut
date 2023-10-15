@@ -1,7 +1,7 @@
 
 #!/bin/bash
 
-CURRENT_VERSION="1.0.3"
+CURRENT_VERSION="1.0.4"
 
 
 # Constants
@@ -22,11 +22,21 @@ check_for_updates() {
     # Comparison to see if the current version is less than the latest version
     if [[ $(echo -e "$CURRENT_VERSION\n$LATEST_VERSION" | sort -V | head -n1) != "$LATEST_VERSION" && "$CURRENT_VERSION" != "$LATEST_VERSION" ]]; then
         echo "A new version of scut is available (v$LATEST_VERSION)."
-        echo "Visit https://github.com/networph/scut to download the update."
+        
+        # Download and replace the current script
+        SCRIPT_URL="https://raw.githubusercontent.com/networph/scut/main/src/scut.sh"
+        SCRIPT_PATH="/usr/local/bin/scut"  # adjust path as per your installation
+        curl -s "$SCRIPT_URL" -o "$SCRIPT_PATH"
+        
+        # Set the permissions to be executable
+        chmod +x "$SCRIPT_PATH"
+        
+        echo "Scut has been updated to v$LATEST_VERSION. Please restart your terminal to apply the update."
     else
         echo "No updates available."
     fi
 }
+
 
 
 create_shortcut() {
