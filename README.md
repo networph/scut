@@ -22,7 +22,6 @@
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Usage](#usage)
-* [Roadmap](#roadmap)
 * [Authors](#authors)
 * [Acknowledgements](#acknowledgements)
 
