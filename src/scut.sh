@@ -1,11 +1,19 @@
-
 #!/bin/bash
 
-CURRENT_VERSION="1.0.4"
+CURRENT_VERSION="1.0.5"
 
+# Detect the shell environment
+if [[ "$SHELL" == */zsh ]]; then
+    CONFIG_FILE="$HOME/.zshrc"
+    echo "Detected Zsh shell."
+elif [[ "$SHELL" == */bash ]]; then
+    CONFIG_FILE="$HOME/.bashrc"
+    echo "Detected Bash shell."
+else
+    echo "Unsupported shell. Only Bash and Zsh are supported."
+    exit 1
+fi
 
-# Constants
-BASHRC_FILE="$HOME/.bashrc"
 FAVORITES_FILE="$HOME/.scut_favorites"
 GITHUB_RAW_BASEURL="https://raw.githubusercontent.com/networph/scut/main"
 
@@ -14,21 +22,17 @@ touch "$FAVORITES_FILE"
 
 check_for_updates() {
     BASE_URL="https://raw.githubusercontent.com/networph/scut/main/version"
-    LATEST_VERSION=$(curl -s -H 'Cache-Control: no-cache' "$BASE_URL" | tr -d 'v' | tr -d ' ')  # Remove "v" and spaces
+    LATEST_VERSION=$(curl -s -H 'Cache-Control: no-cache' "$BASE_URL" | tr -d 'v' | tr -d ' ')
     
-    # Debugging: log the versions being compared
     echo "DEBUG: Current version: $CURRENT_VERSION, Latest version: $LATEST_VERSION"
 
-    # Comparison to see if the current version is less than the latest version
     if [[ $(echo -e "$CURRENT_VERSION\n$LATEST_VERSION" | sort -V | head -n1) != "$LATEST_VERSION" && "$CURRENT_VERSION" != "$LATEST_VERSION" ]]; then
         echo "A new version of scut is available (v$LATEST_VERSION)."
         
-        # Download and replace the current script
         SCRIPT_URL="https://raw.githubusercontent.com/networph/scut/main/src/scut.sh"
-        SCRIPT_PATH="/usr/local/bin/scut"  # adjust path as per your installation
+        SCRIPT_PATH="/usr/local/bin/scut"
         curl -s "$SCRIPT_URL" -o "$SCRIPT_PATH"
         
-        # Set the permissions to be executable
         chmod +x "$SCRIPT_PATH"
         
         echo "Scut has been updated to v$LATEST_VERSION. Please restart your terminal to apply the update."
@@ -37,17 +41,14 @@ check_for_updates() {
     fi
 }
 
-
-
 create_shortcut() {
-    echo "alias $1=\"$2\" #scut" >> "$BASHRC_FILE"
-    echo "Shortcut created! Please restart all terminals for the changes to apply."
+    echo "alias $1=\"$2\" #scut" >> "$CONFIG_FILE"
+    echo "Shortcut created! Please restart your shell for the changes to apply."
 }
 
 list_shortcuts() {
-    grep '#scut' "$BASHRC_FILE" || echo "No shortcuts found."
+    grep '#scut' "$CONFIG_FILE" || echo "No shortcuts found."
 }
-
 
 favorite_shortcut() {
     echo "$1" >> "$FAVORITES_FILE"
@@ -65,19 +66,16 @@ list_favorites() {
 }
 
 remove_shortcut() {
-    # Check if the shortcut name is provided
     if [ -z "$1" ]; then
         echo "Error: No shortcut name provided."
         echo "Usage: scut remove <shortcut_name>"
         return 1
     fi
 
-    # Check if the shortcut exists
-    if grep -q "alias $1=" ~/.bashrc; then
-        # Use sed to find and remove the line with the shortcut alias
-        sed -i.bak "/alias $1=/d" ~/.bashrc
+    if grep -q "alias $1=" "$CONFIG_FILE"; then
+        sed -i.bak "/alias $1=/d" "$CONFIG_FILE"
         echo "Shortcut $1 removed!"
-        echo "Also, for changes to apply. Please restart terminals."
+        echo "Also, for changes to apply, please restart your shell."
     else
         echo "Error: Shortcut $1 does not exist."
     fi
@@ -126,7 +124,6 @@ display_manual() {
     echo "re-source your bashrc to apply the changes: source ~/.bashrc"
 }
 
-
 help_command() {
     case "$1" in
         create)
@@ -155,6 +152,7 @@ help_command() {
             ;;
     esac
 }
+
 
 # Handle actions
 action="$1"
@@ -187,6 +185,6 @@ case "$action" in
         ;;
     *)
         echo "Unknown action: $action"
-        display_manual  # display manual if the action is not recognized
+        display_manual
         ;;
 esac
