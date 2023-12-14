@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CURRENT_VERSION="1.0.5"
+CURRENT_VERSION="1.0.6"
 
 # Detect the shell environment
 if [[ "$SHELL" == */zsh ]]; then
@@ -121,7 +121,7 @@ display_manual() {
     echo ""
     echo "Note: After using 'create' or 'remove', you must reload your terminal or"
     echo "CHECK FOR UPDATES!!!!!: scut update"
-    echo "re-source your bashrc to apply the changes: source ~/.bashrc"
+    echo "re-source your bashrc/zshrc to apply the changes: source ~/.bashrc or source ~/.zshrc"
 }
 
 help_command() {
