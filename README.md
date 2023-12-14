@@ -27,13 +27,11 @@
 
 ## Built With
 
-    Bash: scut is fundamentally crafted using Bash scripting, providing a robust mechanism for managing shell command shortcuts efficiently and effectively. The scripts cater to creating, listing, favoriting, and managing shortcuts directly from your terminal, embedding themselves into your .bashrc for persistence and ease of use.
-
     GitHub: The entire scut project is hosted on GitHub, facilitating not only version control and issue tracking but also serving as the central hub for user acquisition, collaboration, and contribution. This platform provides users with detailed information, documentation, and the ability to download or clone the project for personal or developmental use.
 
 ### Prerequisites
 
-    Bash Shell: Ensure that your system is using Bash as its shell. Most Unix-like operating systems like Linux and macOS use Bash by default.
+    Bash/Zsh Shell: Ensure that your system is using Bash/Zsh as its shell. 
     Git: (NEEDED) To clone the repository directly from GitHub.
     curl and wget: (NEEDED) to update.
 
